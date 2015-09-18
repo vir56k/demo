@@ -49,10 +49,12 @@ public class MainActivity extends AppCompatActivity {
         TimeCounter timeCounter = new TimeCounter("doDemo");
         timeCounter.begin();
 
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 10; i++) {
             //LogUtil.debug(TAG, "debug 输出");
 
-
+            logger.debug("debug Some log message. Details: {}", "debug 输出");
+            logger.info("info Some log message. Details: {}", "debug 输出");
+            logger.error("error Some log message. Details: {}", "debug 输出");
 
             //log2.debug("xxxxxxxxx");
 //            try {

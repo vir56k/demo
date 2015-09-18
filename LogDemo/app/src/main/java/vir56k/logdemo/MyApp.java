@@ -32,7 +32,7 @@ public class MyApp extends Application {
         logConfigurator.setRootLevel(Level.DEBUG);
         logConfigurator.setLevel("org.apache", Level.ERROR);
         logConfigurator.setFilePattern("%d %-5p [%c{2}]-[%L] %m%n");
-        logConfigurator.setMaxFileSize(1024 * 1024 * 2);
+        logConfigurator.setMaxFileSize(1024 * 1024 * 5);
         logConfigurator.setImmediateFlush(true);
         logConfigurator.configure();
     }
