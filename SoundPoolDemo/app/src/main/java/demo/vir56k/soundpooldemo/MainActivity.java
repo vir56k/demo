@@ -5,14 +5,14 @@ import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
+    public static final int KEY_SOUND_A1 = 1;
+    public static final int KEY_SOUND_A2 = 1;
+
     SoundPool mSoundPool;
     private HashMap<Integer, Integer> soundPoolMap;
 
@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         mSoundPool = new SoundPool(1, AudioManager.STREAM_ALARM, 0);
         mSoundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
@@ -30,26 +29,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         soundPoolMap = new HashMap<Integer, Integer>();
-        soundPoolMap.put(1, mSoundPool.load(this, R.raw.input_consignee_phone, 1));
-        soundPoolMap.put(2, mSoundPool.load(this, R.raw.input_your_number, 1));
-        soundPoolMap.put(3, mSoundPool.load(this, R.raw.qujianpwassowrd, 1));
-        soundPoolMap.put(4, mSoundPool.load(this, R.raw.sao, 1));
+        soundPoolMap.put(KEY_SOUND_A1, mSoundPool.load(this, R.raw.a1, 1));
+        soundPoolMap.put(KEY_SOUND_A2, mSoundPool.load(this, R.raw.a2, 1));
     }
 
     private void alert(String s) {
-        Log.i("XXXX", s + "");
+        Log.i("Alert: ", s + "");
     }
-
 
     public void onClickView(View view) {
         if (view.getId() == R.id.button) {
-            mSoundPool.play(soundPoolMap.get(1), 1, 1, 0, 0, 1);
-        }
-        if (view.getId() == R.id.button3) {
-            mSoundPool.play(soundPoolMap.get(2), 1, 1, 0, 0, 1);
+            mSoundPool.play(soundPoolMap.get(KEY_SOUND_A1), 1, 1, 0, 0, 1);
         }
         if (view.getId() == R.id.button2) {
-            mSoundPool.play(soundPoolMap.get(3), 1, 1, 0, 0, 1);
+            mSoundPool.play(soundPoolMap.get(KEY_SOUND_A2), 1, 1, 0, 0, 1);
         }
     }
 

@@ -2,3 +2,5 @@
 
 #LogDemo
 	演示了 slf4j + log4j 日志框架的使用的配置。这是一个代码演示工程，使用Gradle工程构建。
+#SoundPoolDemo
+	SoundPool 音效播放的一个演示	
