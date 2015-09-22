@@ -1,18 +1,11 @@
 package vir56k.logdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.math.BigDecimal;
-import java.util.Calendar;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
         float f = doDemo();
         txt.setText("时长:" + f);
 
-
     }
 
     @Override
     protected void onStart() {
+
+        logger.info("onStart");
+
         //LogConfigurator logConfigurator = new LogConfigurator();
         timeCounterActivity.end();
         timeCounterActivity.print();
@@ -49,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
         TimeCounter timeCounter = new TimeCounter("doDemo");
         timeCounter.begin();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1; i++) {
             //LogUtil.debug(TAG, "debug 输出");
 
-            logger.debug("debug Some log message. Details: {}", "debug 输出");
-            logger.info("info Some log message. Details: {}", "debug 输出");
-            logger.error("error Some log message. Details: {}", "debug 输出");
+            logger.debug("debug Some log message. Details: {}", "debug 输出" + i);
+            logger.info("info Some log message. Details: {}", "debug 输出" + i);
+            logger.error("error Some log message. Details: {}", "debug 输出" + i);
 
             //log2.debug("xxxxxxxxx");
 //            try {

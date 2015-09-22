@@ -19,6 +19,8 @@ public class MyApp extends Application {
 
     }
 
+
+
     private void configLog(String logFileNamePrefix) {
         LogConfigurator.confifure();
     }
