@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?> <!-- 微博列表界面tab栏关注 按钮 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="true">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="1dp" android:color="#f36c21" />
+            <corners android:radius="0dp" />
+        </shape>
+    </item>
+    <item android:state_checked="true">
+        <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+            <!-- 变框颜色值 -->
+            <item>
+                <shape>
+                    <solid android:color="#e0861a" />
+                </shape>
+            </item>
+            <!-- 主体背景颜色值 -->
+            <item android:bottom="3dp" android:left="0dp" android:right="0dp" android:top="0dp">
+
+                <!-- 边框里面背景颜色 白色 -->
+                <shape>
+                    <solid android:color="#ffffff" />
+                </shape>
+            </item>
+
+        </layer-list>
+    </item>
+    <item android:drawable="@android:color/transparent" />
+
+</selector>

@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <HorizontalScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radiogroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_bg_main"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/tab_pay"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/tab_item_bg_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="已付款"
+                android:textColor="@color/tab_item_font_color_selector"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/tab_nopay"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+
+                android:background="@drawable/tab_item_bg_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="未付款"
+                android:textColor="@color/tab_item_font_color_selector"
+                android:textSize="16sp" />
+        </RadioGroup>
+    </HorizontalScrollView>
+
+
+</LinearLayout>
