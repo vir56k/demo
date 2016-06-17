@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 android.R.color.holo_orange_light, android.R.color.holo_red_light);
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mDatas);
         mListView.setAdapter(mAdapter);
-
-
     }
 
     private List<String> creatDataSource() {
