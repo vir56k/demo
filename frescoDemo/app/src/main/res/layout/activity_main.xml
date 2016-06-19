@@ -4,8 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     android:orientation="vertical"
     tools:context="zhangyf.vir56k.frescodemo.MainActivity">
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_image_view0"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        fresco:progressBarImage="@drawable/loading"
+        fresco:progressBarImageScaleType="centerInside"
+        fresco:failureImage="@drawable/error2"
+        fresco:failureImageScaleType="centerInside"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/loading" />
+
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_image_viewRound"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        fresco:roundedCornerRadius="30dp"
+        fresco:roundTopLeft="true"
+        fresco:roundTopRight="false"
+        fresco:roundBottomLeft="false"
+        fresco:roundBottomRight="true"
+        fresco:placeholderImage="@drawable/loading" />
 
     <LinearLayout
         android:layout_width="match_parent"
