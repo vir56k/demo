@@ -10,16 +10,23 @@
 # 简单使用 
 简单来说，只需要三步。
 
-        1. 添加依赖
-        2. 编写布局
-        3. 指定Uri
+         1. 添加依赖
+         2. 初始化Fresco
+         3. 编写布局
+         4. 指定Uri
     
 ## 1.添加依赖  
 在你的 模块级别 的gradle中写下：
 
     compile 'com.facebook.fresco:fresco:0.10.0'
 
-## 2.编写布局  
+## 2.初始化Fresco
+
+在你的自定义application中，或者在Activity.onCreate方法内，setContentView之前调用：
+    
+    Fresco.initialize(this);
+
+## 3.编写布局  
 声明命名空间 xmlns:fresco="http://schemas.android.com/apk/res-auto"
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,7 +39,7 @@
     android:layout_height="200dp"
     />
 
-### 3.指定Uri  
+### 4.指定Uri  
     
     final String str2 = "http://h.hiphotos.baidu.com/zhidao/pic/item/279759ee3d6d55fb65c51e786c224f4a20a4dd69.jpg";
     Uri uri = Uri.parse(str2);
