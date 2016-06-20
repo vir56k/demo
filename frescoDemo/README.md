@@ -235,6 +235,9 @@ Fresco使用 Uri 对象指定要显示的图片
 
  特别注意：Fresco 不支持 相对路径的URI. 所有的URI都必须是绝对路径，并且带上该URI的scheme。  
 #扩展资源  
+ 
 
-    Github:  https://github.com/facebook/fresco  
-    中文文档： http://www.fresco-cn.org/
++   我写的demo: [https://github.com/vir56k/demo/tree/master/frescoDemo](https://github.com/vir56k/demo/tree/master/frescoDemo/)
++   Github:  https://github.com/facebook/fresco  
++   中文文档： http://www.fresco-cn.org/
+    
