@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyApplication3.iml" filepath="$PROJECT_DIR$/MyApplication3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidlDemo.iml" filepath="$PROJECT_DIR$/aidlDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/myserver/myserver.iml" filepath="$PROJECT_DIR$/myserver/myserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/remoteservicecontract/remoteservicecontract.iml" filepath="$PROJECT_DIR$/remoteservicecontract/remoteservicecontract.iml" />
