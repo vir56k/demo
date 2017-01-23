@@ -24,7 +24,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.0'
     compile files('libs/android-logging-log4j-1.0.3.jar')
     compile files('libs/log4j-1.2.17.jar')
-    compile files('libs/log4j-over-slf4j-1.7.12.jar')
+//    compile files('libs/log4j-over-slf4j-1.7.12.jar')
     compile files('libs/slf4j-log4j12-1.7.12.jar')
     compile files('libs/slf4j-api-1.7.12.jar')
 }

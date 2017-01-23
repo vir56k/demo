@@ -50,9 +50,11 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 100; i++) {
             //LogUtil.debug(TAG, "debug 输出");
 
+            logger.trace("trace Some log message. Details: {}", "trace 输出" + i);
             logger.debug("debug Some log message. Details: {}", "debug 输出" + i);
-            logger.info("info Some log message. Details: {}", "debug 输出" + i);
-            logger.error("error Some log message. Details: {}", "debug 输出" + i);
+            logger.info("info Some log message. Details: {}", "info 输出" + i);
+            logger.error("error Some log message. Details: {}", "error 输出" + i);
+            logger.warn("warn Some log message. Details: {}", "warn 输出" + i);
 
             //log2.debug("xxxxxxxxx");
 //            try {

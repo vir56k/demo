@@ -62,6 +62,7 @@ public class LogConfigurator {
         rollingPolicy.setContext(context);
         rollingPolicy.start();
 
+
         rollingFileAppender.setRollingPolicy(rollingPolicy);
 
         PatternLayoutEncoder encoder = new PatternLayoutEncoder();
@@ -81,9 +82,9 @@ public class LogConfigurator {
         // add the newly created appenders to the root logger;
         // qualify Logger to disambiguate from org.slf4j.Logger
         ch.qos.logback.classic.Logger root = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
-        root.setLevel(Level.TRACE);
         root.addAppender(rollingFileAppender);
         root.addAppender(logcatAppender);
+        root.setLevel(Level.ALL);
 
         // print any status messages (warnings, etc) encountered in logback config
         //StatusPrinter.print(context);
