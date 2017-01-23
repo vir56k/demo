@@ -21,6 +21,9 @@ import ch.qos.logback.core.rolling.TimeBasedRollingPolicy;
  */
 public class LogConfigurator {
 
+    /**
+     * 配置日志的文件目录
+     */
     public static void confifure() {
         final String LOG_DIR = Environment.getExternalStorageDirectory() + File.separator + "logback";
         Log.d("LOG", "## 日志路径：" + LOG_DIR);

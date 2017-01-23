@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import obd.mapbar.com.logbackdemo2.R;
+import vir56k.logdemo.logbackdemo2.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -43,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
     }
 
+    /**
+     * 注意： 在使用android studio连接连接真机查看控制台日志时，根据手机不同，
+     *       可能仅仅看到 error日志。这不是日志框架出了问题，这是手机的设置"默认只显示 error日志"，
+     *       实际上真实的日志还是会写入到日志文件中的，请查看日志文件。
+     * @return
+     */
     private float doDemo() {
         TimeCounter timeCounter = new TimeCounter("doDemo");
         timeCounter.begin();

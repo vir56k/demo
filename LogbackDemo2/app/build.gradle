@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
-        applicationId "obd.mapbar.com.logbackdemo2"
+        applicationId "vir56k.logdemo.logbackdemo2"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
