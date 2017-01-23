@@ -44,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 注意： 在使用android studio连接连接真机查看控制台日志时，根据手机不同，
+     * 注意： 1.在使用android studio连接连接真机查看控制台日志时，根据手机不同，
      *       可能仅仅看到 error日志。这不是日志框架出了问题，这是手机的设置"默认只显示 error日志"，
      *       实际上真实的日志还是会写入到日志文件中的，请查看日志文件。
+     *       2.在模拟器下可以看到所有的控制台输出日志。
      * @return
      */
     private float doDemo() {
