@@ -49,4 +49,15 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public boolean fun1(){
+        return false;
+    }
+
+    public boolean Fun2(){
+        String b1;
+        b1 = "xxx";
+        return b1.equals("y");
+    }
+
 }
