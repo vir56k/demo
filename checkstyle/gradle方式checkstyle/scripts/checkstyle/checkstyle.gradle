@@ -1,0 +1,21 @@
+apply plugin: 'checkstyle'
+
+
+def configDir = "${project.rootDir}/scripts"
+def reportsDir = "${project.buildDir}/reports"
+
+
+task checkstyle(type: Checkstyle) {
+    configFile file("$configDir/checkstyle/huawei_CheckStyle.xml")
+    configProperties.checkstyleSuppressionsPath = file("$configDir/checkstyle/suppressions.xml").absolutePath
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+    exclude '**/test/**'
+    exclude '**/androidTest/**'
+
+    classpath = files()
+}
+
+
+check.dependsOn 'checkstyle'
