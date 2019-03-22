@@ -1,0 +1,33 @@
+apply plugin: 'findbugs'
+
+
+def configDir = "${project.rootDir}/scripts"
+def reportsDir = "${project.buildDir}/reports"
+
+check.dependsOn 'findbugs'
+
+task findbugs(type: FindBugs, dependsOn: "assembleDebug") {
+    ignoreFailures = true
+    effort = "max"
+    reportLevel = "high" //low,medium,high
+//    reportLevel = "low"
+    excludeFilter = new File("$configDir/findbugs/findbugs-filter.xml")
+    classes = files("${project.rootDir}/app/build/intermediates/javac")
+
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        xml {
+            destination "$reportsDir/findbugs/findbugs.xml"
+        }
+        html {
+            destination "$reportsDir/findbugs/findbugs.html"
+        }
+    }
+
+    classpath = files()
+}
