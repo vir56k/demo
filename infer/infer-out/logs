@@ -1,0 +1,280 @@
+[65530][environment] CWD = /Users/zhangyunfei/git/demo/infer
+[65530][environment] No .inferconfig file found
+[65530][environment] Project root = /Users/zhangyunfei/git/demo/infer
+[65530][environment] INFER_ARGS =   command line arguments:   infer -- ./gradlew clean buildAnalyzer: checkers
+[65530][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[65530][environment] Infer log identifier is 
+Infer version v0.15.0
+[65530][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[65530][environment] 
+[65530][   progress] Capturing in gradle mode...
+
+[65592][environment] CWD = /Users/zhangyunfei/git/demo/infer
+[65592][environment] No .inferconfig file found
+[65592][environment] Project root = /Users/zhangyunfei/git/demo/infer
+[65592][environment] INFER_ARGS =   @/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args.tmp.5f65a8
+[65592][environment]   ++Contents of '/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args.tmp.5f65a8':
+[65592][environment]     capture --continue
+[65592][environment]   
+[65592][environment] command line arguments:   /Users/zhangyunfei/chengxu/infer-osx-v0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
+[65592][environment]                           capture --continue -- javac -source 1.7 -target 1.7
+[65592][environment]                           -d
+[65592][environment]                           /Users/zhangyunfei/git/demo/infer/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes
+[65592][environment]                           -encoding UTF-8 -bootclasspath
+[65592][environment]                           /Users/zhangyunfei/chengxu/android-sdk/platforms/android-28/android.jar:/Users/zhangyunfei/chengxu/android-sdk/build-tools/28.0.3/core-lambda-stubs.jar
+[65592][environment]                           -s
+[65592][environment]                           /Users/zhangyunfei/git/demo/infer/app/build/generated/source/apt/debug
+[65592][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
+[65592][environment]                           -classpath
+[65592][environment]                           /Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/02e1273b68df9ab5482c0e0b01503382/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/13d733592cf2e04f1a5044232bc4f040/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f9e35205c6bbee1db7bc0b819555fd9e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/7aa86fab37e2bf9f0c67e3b5282e03ab/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/78a21d2f3db406ade06932e4a330b44e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/5c8b99a6fa5b188fa7e75e58fceff9d5/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/654d6961a0c2e1e6ef7eaa429ac90e1e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/f70e4a24dd00c502c21fe88c54496698/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/18ab30d253c5833ff69c509c8175fe9b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/9a568e3aa9d9191d9244515ef2f5ac0b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/1e5069de25d6efeddf0b36c8c78db312/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/c1ec5412c6a65d4e6f8220c7a6b39c5a/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/22d2cfc3bc3eadaa085908f062f3931e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/846d66a301107b9851269479a94eaa56/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/9f3770b577314659c1f056bf7d25a6c9/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7865a6293e252c2a72fc981fdcbb2a1b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/8fb64066fb893cd2be08b7cecb0bd938/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/c676fe19477ecc23ba6eb460277aff59/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/a0526b24ae140cb8c13a11e402097515/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c45cd14edea9785baeb4bbaaeb055b66/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support/collections/28.0.0/c1bcdade4d3cc2836130424a3f3e4182c666a745/collections-28.0.0.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/4ef84ff74732fcc390515842f2fe4a07/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/6e0298268057193f8b3f65c55836ea49/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/003d72bd721c84d6a007b9993f4ee485/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/dc2056c232250872f1c3271c75479f24/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/9fa5141cf0404ac2690651a1060597e8/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/58180b9993f84ddb4eee265888e23cbe/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/c7db94045fabaee0edec3eb0b82fd884/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/d116ddabdaf7b86e8d8095f656402440/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f8fb50028bbd730122cf051da08a3352/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/ba0d074a8c13caa2af564f22d0d600de/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.1/207a6efae6a3555e326de41f76bdadd9a239cbce/common-1.1.1.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/1679f39b27b1bc92493f99f9b91a6f93/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.1/e55b70d1f5620db124b3e85a7f4bdc7bd48d9f95/common-1.1.1.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/28.0.0/ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8/support-annotations-28.0.0.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.1.3/bde0667d7414c16ed62d3cfe993cff7f9d732373/constraint-layout-solver-1.1.3.jar
+[65592][environment]                           @/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_SRV4gr.txt
+[65592][environment]   ++Contents of '/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_SRV4gr.txt':
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/source/buildConfig/debug/com/example/inferdemo/BuildConfig.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/example/inferdemo/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/lifecycle/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/lifecycle/livedata/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/lifecycle/livedata/core/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/lifecycle/viewmodel/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/core/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/constraint/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coordinatorlayout/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/graphics/drawable/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/slidingpanelayout/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/customview/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/loader/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/fragment/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/swiperefreshlayout/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/cursoradapter/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/localbroadcastmanager/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/print/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/documentfile/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreui/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/interpolator/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/drawerlayout/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/compat/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/cardview/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/appcompat/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/recyclerview/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/viewpager/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/asynclayoutinflater/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/transition/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/design/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreutils/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/androidx/versionedparcelable/R.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/src/main/java/com/example/inferdemo/MainActivity.java
+[65592][environment]     /Users/zhangyunfei/git/demo/infer/app/src/main/java/com/example/inferdemo/xDemo.java
+[65592][environment]   
+[65592][environment] Analyzer: capture
+[65592][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[65592][      debug] Current working directory: '/Users/zhangyunfei/git/demo/infer'
+[65592][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_SRV4gr.txt' '@/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args_.tmp.bbbcf9' 2>'/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/javac.tmp.c43222.out'
+[65592][      debug] *** Success. Logs:
+[65592][      debug] Translating 4 source files (235 classes)
+[65592][      debug] done capturing all files
+[65592][environment] Infer log identifier is 
+
+[65601][environment] CWD = /Users/zhangyunfei/git/demo/infer
+[65601][environment] No .inferconfig file found
+[65601][environment] Project root = /Users/zhangyunfei/git/demo/infer
+[65601][environment] INFER_ARGS =   @/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args.tmp.58e82d
+[65601][environment]   ++Contents of '/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args.tmp.58e82d':
+[65601][environment]     capture --continue
+[65601][environment]   
+[65601][environment] command line arguments:   /Users/zhangyunfei/chengxu/infer-osx-v0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
+[65601][environment]                           capture --continue -- javac -source 1.7 -target 1.7
+[65601][environment]                           -d
+[65601][environment]                           /Users/zhangyunfei/git/demo/infer/app/build/intermediates/javac/release/compileReleaseJavaWithJavac/classes
+[65601][environment]                           -encoding UTF-8 -bootclasspath
+[65601][environment]                           /Users/zhangyunfei/chengxu/android-sdk/platforms/android-28/android.jar:/Users/zhangyunfei/chengxu/android-sdk/build-tools/28.0.3/core-lambda-stubs.jar
+[65601][environment]                           -s
+[65601][environment]                           /Users/zhangyunfei/git/demo/infer/app/build/generated/source/apt/release
+[65601][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
+[65601][environment]                           -classpath
+[65601][environment]                           /Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/02e1273b68df9ab5482c0e0b01503382/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/13d733592cf2e04f1a5044232bc4f040/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f9e35205c6bbee1db7bc0b819555fd9e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/7aa86fab37e2bf9f0c67e3b5282e03ab/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/78a21d2f3db406ade06932e4a330b44e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/5c8b99a6fa5b188fa7e75e58fceff9d5/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/654d6961a0c2e1e6ef7eaa429ac90e1e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/f70e4a24dd00c502c21fe88c54496698/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/18ab30d253c5833ff69c509c8175fe9b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/9a568e3aa9d9191d9244515ef2f5ac0b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/1e5069de25d6efeddf0b36c8c78db312/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/c1ec5412c6a65d4e6f8220c7a6b39c5a/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/22d2cfc3bc3eadaa085908f062f3931e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/846d66a301107b9851269479a94eaa56/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/9f3770b577314659c1f056bf7d25a6c9/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7865a6293e252c2a72fc981fdcbb2a1b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/8fb64066fb893cd2be08b7cecb0bd938/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/c676fe19477ecc23ba6eb460277aff59/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/a0526b24ae140cb8c13a11e402097515/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c45cd14edea9785baeb4bbaaeb055b66/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support/collections/28.0.0/c1bcdade4d3cc2836130424a3f3e4182c666a745/collections-28.0.0.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/4ef84ff74732fcc390515842f2fe4a07/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/6e0298268057193f8b3f65c55836ea49/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/003d72bd721c84d6a007b9993f4ee485/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/dc2056c232250872f1c3271c75479f24/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/9fa5141cf0404ac2690651a1060597e8/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/58180b9993f84ddb4eee265888e23cbe/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/c7db94045fabaee0edec3eb0b82fd884/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/d116ddabdaf7b86e8d8095f656402440/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f8fb50028bbd730122cf051da08a3352/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/ba0d074a8c13caa2af564f22d0d600de/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.1/207a6efae6a3555e326de41f76bdadd9a239cbce/common-1.1.1.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/1679f39b27b1bc92493f99f9b91a6f93/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.1/e55b70d1f5620db124b3e85a7f4bdc7bd48d9f95/common-1.1.1.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/28.0.0/ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8/support-annotations-28.0.0.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.1.3/bde0667d7414c16ed62d3cfe993cff7f9d732373/constraint-layout-solver-1.1.3.jar
+[65601][environment]                           @/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_zVL24a.txt
+[65601][environment]   ++Contents of '/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_zVL24a.txt':
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/source/buildConfig/release/com/example/inferdemo/BuildConfig.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/com/example/inferdemo/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/arch/lifecycle/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/arch/lifecycle/livedata/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/arch/lifecycle/livedata/core/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/arch/lifecycle/viewmodel/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/arch/core/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/constraint/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/coordinatorlayout/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/graphics/drawable/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/slidingpanelayout/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/customview/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/loader/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/fragment/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/swiperefreshlayout/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/cursoradapter/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/localbroadcastmanager/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/print/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/documentfile/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/coreui/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/interpolator/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/drawerlayout/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/compat/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/v7/cardview/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/v7/appcompat/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/v7/recyclerview/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/v7/viewpager/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/asynclayoutinflater/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/transition/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/design/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/android/support/coreutils/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/build/generated/not_namespaced_r_class_sources/release/processReleaseResources/r/androidx/versionedparcelable/R.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/src/main/java/com/example/inferdemo/MainActivity.java
+[65601][environment]     /Users/zhangyunfei/git/demo/infer/app/src/main/java/com/example/inferdemo/xDemo.java
+[65601][environment]   
+[65601][environment] Analyzer: capture
+[65601][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[65601][      debug] Current working directory: '/Users/zhangyunfei/git/demo/infer'
+[65601][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_zVL24a.txt' '@/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args_.tmp.df3b6e' 2>'/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/javac.tmp.e6d95b.out'
+[65601][      debug] *** Success. Logs:
+[65601][      debug] Translating 4 source files (235 classes)
+[65601][      debug] Merging capture data for already-captured 'app/src/main/java/com/example/inferdemo/MainActivity.java'
+[65601][      debug] Merging capture data for already-captured 'app/src/main/java/com/example/inferdemo/xDemo.java'
+[65601][      debug] done capturing all files
+[65601][environment] Infer log identifier is 
+
+[65610][environment] CWD = /Users/zhangyunfei/git/demo/infer
+[65610][environment] No .inferconfig file found
+[65610][environment] Project root = /Users/zhangyunfei/git/demo/infer
+[65610][environment] INFER_ARGS =   @/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args.tmp.4a1302
+[65610][environment]   ++Contents of '/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args.tmp.4a1302':
+[65610][environment]     capture --continue
+[65610][environment]   
+[65610][environment] command line arguments:   /Users/zhangyunfei/chengxu/infer-osx-v0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
+[65610][environment]                           capture --continue -- javac -source 1.7 -target 1.7
+[65610][environment]                           -d
+[65610][environment]                           /Users/zhangyunfei/git/demo/infer/app/build/intermediates/javac/debugUnitTest/compileDebugUnitTestJavaWithJavac/classes
+[65610][environment]                           -encoding UTF-8 -bootclasspath
+[65610][environment]                           /Users/zhangyunfei/chengxu/android-sdk/platforms/android-28/android.jar:/Users/zhangyunfei/chengxu/android-sdk/build-tools/28.0.3/core-lambda-stubs.jar
+[65610][environment]                           -s
+[65610][environment]                           /Users/zhangyunfei/git/demo/infer/app/build/generated/source/apt/test/debug
+[65610][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
+[65610][environment]                           -classpath
+[65610][environment]                           /Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/02e1273b68df9ab5482c0e0b01503382/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/13d733592cf2e04f1a5044232bc4f040/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f9e35205c6bbee1db7bc0b819555fd9e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/7aa86fab37e2bf9f0c67e3b5282e03ab/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/78a21d2f3db406ade06932e4a330b44e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/5c8b99a6fa5b188fa7e75e58fceff9d5/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/654d6961a0c2e1e6ef7eaa429ac90e1e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/f70e4a24dd00c502c21fe88c54496698/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/18ab30d253c5833ff69c509c8175fe9b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/9a568e3aa9d9191d9244515ef2f5ac0b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/1e5069de25d6efeddf0b36c8c78db312/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/c1ec5412c6a65d4e6f8220c7a6b39c5a/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/22d2cfc3bc3eadaa085908f062f3931e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/846d66a301107b9851269479a94eaa56/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/9f3770b577314659c1f056bf7d25a6c9/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7865a6293e252c2a72fc981fdcbb2a1b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/8fb64066fb893cd2be08b7cecb0bd938/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/c676fe19477ecc23ba6eb460277aff59/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/a0526b24ae140cb8c13a11e402097515/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c45cd14edea9785baeb4bbaaeb055b66/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support/collections/28.0.0/c1bcdade4d3cc2836130424a3f3e4182c666a745/collections-28.0.0.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/4ef84ff74732fcc390515842f2fe4a07/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/6e0298268057193f8b3f65c55836ea49/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/003d72bd721c84d6a007b9993f4ee485/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/dc2056c232250872f1c3271c75479f24/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/9fa5141cf0404ac2690651a1060597e8/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/58180b9993f84ddb4eee265888e23cbe/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/c7db94045fabaee0edec3eb0b82fd884/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/d116ddabdaf7b86e8d8095f656402440/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f8fb50028bbd730122cf051da08a3352/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/ba0d074a8c13caa2af564f22d0d600de/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.1/207a6efae6a3555e326de41f76bdadd9a239cbce/common-1.1.1.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/1679f39b27b1bc92493f99f9b91a6f93/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.1/e55b70d1f5620db124b3e85a7f4bdc7bd48d9f95/common-1.1.1.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/28.0.0/ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8/support-annotations-28.0.0.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.1.3/bde0667d7414c16ed62d3cfe993cff7f9d732373/constraint-layout-solver-1.1.3.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar:/Users/zhangyunfei/git/demo/infer/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes
+[65610][environment]                           @/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_F5aOM4.txt
+[65610][environment]   ++Contents of '/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_F5aOM4.txt':
+[65610][environment]     /Users/zhangyunfei/git/demo/infer/app/src/test/java/com/example/inferdemo/ExampleUnitTest.java
+[65610][environment]   
+[65610][environment] Analyzer: capture
+[65610][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[65610][      debug] Current working directory: '/Users/zhangyunfei/git/demo/infer'
+[65610][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_F5aOM4.txt' '@/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args_.tmp.bdf2a9' 2>'/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/javac.tmp.53708e.out'
+[65610][      debug] *** Success. Logs:
+[65610][      debug] Translating 1 source files (1 classes)
+[65610][      debug] done capturing all files
+[65610][environment] Infer log identifier is 
+
+[65617][environment] CWD = /Users/zhangyunfei/git/demo/infer
+[65617][environment] No .inferconfig file found
+[65617][environment] Project root = /Users/zhangyunfei/git/demo/infer
+[65617][environment] INFER_ARGS =   @/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args.tmp.ca8b1b
+[65617][environment]   ++Contents of '/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args.tmp.ca8b1b':
+[65617][environment]     capture --continue
+[65617][environment]   
+[65617][environment] command line arguments:   /Users/zhangyunfei/chengxu/infer-osx-v0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
+[65617][environment]                           capture --continue -- javac -source 1.7 -target 1.7
+[65617][environment]                           -d
+[65617][environment]                           /Users/zhangyunfei/git/demo/infer/app/build/intermediates/javac/releaseUnitTest/compileReleaseUnitTestJavaWithJavac/classes
+[65617][environment]                           -encoding UTF-8 -bootclasspath
+[65617][environment]                           /Users/zhangyunfei/chengxu/android-sdk/platforms/android-28/android.jar:/Users/zhangyunfei/chengxu/android-sdk/build-tools/28.0.3/core-lambda-stubs.jar
+[65617][environment]                           -s
+[65617][environment]                           /Users/zhangyunfei/git/demo/infer/app/build/generated/source/apt/test/release
+[65617][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
+[65617][environment]                           -classpath
+[65617][environment]                           /Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/02e1273b68df9ab5482c0e0b01503382/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/13d733592cf2e04f1a5044232bc4f040/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/f9e35205c6bbee1db7bc0b819555fd9e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/7aa86fab37e2bf9f0c67e3b5282e03ab/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/78a21d2f3db406ade06932e4a330b44e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/5c8b99a6fa5b188fa7e75e58fceff9d5/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/654d6961a0c2e1e6ef7eaa429ac90e1e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/f70e4a24dd00c502c21fe88c54496698/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/18ab30d253c5833ff69c509c8175fe9b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/9a568e3aa9d9191d9244515ef2f5ac0b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/1e5069de25d6efeddf0b36c8c78db312/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/c1ec5412c6a65d4e6f8220c7a6b39c5a/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/22d2cfc3bc3eadaa085908f062f3931e/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/846d66a301107b9851269479a94eaa56/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/9f3770b577314659c1f056bf7d25a6c9/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7865a6293e252c2a72fc981fdcbb2a1b/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/8fb64066fb893cd2be08b7cecb0bd938/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/c676fe19477ecc23ba6eb460277aff59/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/a0526b24ae140cb8c13a11e402097515/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/c45cd14edea9785baeb4bbaaeb055b66/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support/collections/28.0.0/c1bcdade4d3cc2836130424a3f3e4182c666a745/collections-28.0.0.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/4ef84ff74732fcc390515842f2fe4a07/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/6e0298268057193f8b3f65c55836ea49/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/003d72bd721c84d6a007b9993f4ee485/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/dc2056c232250872f1c3271c75479f24/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/9fa5141cf0404ac2690651a1060597e8/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/58180b9993f84ddb4eee265888e23cbe/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/c7db94045fabaee0edec3eb0b82fd884/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/d116ddabdaf7b86e8d8095f656402440/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f8fb50028bbd730122cf051da08a3352/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/ba0d074a8c13caa2af564f22d0d600de/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.1/207a6efae6a3555e326de41f76bdadd9a239cbce/common-1.1.1.jar:/Users/zhangyunfei/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/1679f39b27b1bc92493f99f9b91a6f93/jars/classes.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.1/e55b70d1f5620db124b3e85a7f4bdc7bd48d9f95/common-1.1.1.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/28.0.0/ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8/support-annotations-28.0.0.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.1.3/bde0667d7414c16ed62d3cfe993cff7f9d732373/constraint-layout-solver-1.1.3.jar:/Users/zhangyunfei/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar:/Users/zhangyunfei/git/demo/infer/app/build/intermediates/javac/release/compileReleaseJavaWithJavac/classes
+[65617][environment]                           @/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_T9MXdn.txt
+[65617][environment]   ++Contents of '/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_T9MXdn.txt':
+[65617][environment]     /Users/zhangyunfei/git/demo/infer/app/src/test/java/com/example/inferdemo/ExampleUnitTest.java
+[65617][environment]   
+[65617][environment] Analyzer: capture
+[65617][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[65617][      debug] Current working directory: '/Users/zhangyunfei/git/demo/infer'
+[65617][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/zhangyunfei/git/demo/infer/infer-out/filelists/gradle_T9MXdn.txt' '@/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/args_.tmp.1d6c28' 2>'/var/folders/l6/kp1fmk9j4ns2xnd3jsw20tvr0000gn/T/javac.tmp.84ae0d.out'
+[65617][      debug] *** Success. Logs:
+[65617][      debug] Translating 1 source files (1 classes)
+[65617][      debug] Merging capture data for already-captured 'app/src/test/java/com/example/inferdemo/ExampleUnitTest.java'
+[65617][      debug] done capturing all files
+[65617][environment] Infer log identifier is 
+[65530][   progress] Found 67 source files to analyze in /Users/zhangyunfei/git/demo/infer/infer-out
+[65530][   progress] Starting analysis...
+[65530][   progress] 
+[65530][   progress] legend:
+[65530][   progress]   "F" analyzing a file
+[65530][   progress]   "." analyzing a procedure
+[65530][   progress] 
+[65530][   progress] 
+[65530][environment] Parallel jobs: 4
+[65530][   progress] FFF
+F
+
+
+[65626][   progress] .[65628][   progress] .[65625][   progress] .[65627][   progress] ....F
+FF
+
+.....F
+[65629][   progress] .[65631][   progress] .[65630][   progress] .F
+.F
+.............[65632][   progress] ............[65633][   progress] ...[65634][   progress] .........F
+.F
+........[65635][   progress] .F
+[65636][   progress] ........................F[65637][   progress] .
+...........F
+[65638][   progress] .........[65639][   progress] ....F
+F
+[65640][   progress] .[65641][   progress] .F
+...........F
+[65642][   progress] .F
+[65643][   progress] ......[65644][   progress] ........F
+..........F
+[65645][   progress] .........[65646][   progress] ..F
+..F
+[65647][   progress] ....[65648][   progress] ............F
+[65649][   progress] .F
+[65650][   progress] ......F
+.F
+.......F
+[65651][   progress] ...[65652][   progress] ........[65653][   progress] ..............F
+F
+[65654][   progress] .[65655][   progress] .......................F
+F
+[65656][   progress] .[65657][   progress] ...F
+F.
+.F
+[65658][   progress] .[65659][   progress] .F
+F
+[65660][   progress] .FF
+
+F
+FF
+
+F
+FF
+
+F
+FF
+
+F
+FF
+
+F
+F
+F
+F
+F
+F
+F
+F
+F
+F
+F
+F
+F
+F
+F
+[65678][   progress] .............

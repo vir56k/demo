@@ -1,0 +1,13 @@
+Found 1 issue
+
+app/src/main/java/com/example/inferdemo/xDemo.java:10: error: NULL_DEREFERENCE
+  object `s` last assigned on line 9 could be null and is dereferenced at line 10.
+  8.       int test() {
+  9.           String s = null;
+  10. >         return s.length();
+  11.       }
+  12.   }
+
+Summary of the reports
+
+  NULL_DEREFERENCE: 1

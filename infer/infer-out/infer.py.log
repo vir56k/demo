@@ -1,0 +1,26 @@
+[INFO] output of locale.getdefaultlocale(): ('zh_CN', 'UTF-8')
+[INFO] encoding we chose in the end: UTF-8
+[INFO] Running command /Users/zhangyunfei/chengxu/infer-osx-v0.15.0/lib/infer/infer/bin/../lib/python/infer.py -j 4 --project-root /Users/zhangyunfei/git/demo/infer --out /Users/zhangyunfei/git/demo/infer/infer-out -- ./gradlew clean build
+[INFO] Path to infer script /Users/zhangyunfei/chengxu/infer-osx-v0.15.0/lib/infer/infer/bin/../lib/python/infer.py (/Users/zhangyunfei/chengxu/infer-osx-v0.15.0/lib/infer/infer/lib/python/infer.py)
+[INFO] Platform: Darwin-18.0.0-x86_64-i386-64bit
+[INFO] PATH=/Users/zhangyunfei/.rvm/gems/ruby-2.3.0/bin:/Users/zhangyunfei/.rvm/gems/ruby-2.3.0@global/bin:/Users/zhangyunfei/.rvm/rubies/ruby-2.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/zhangyunfei/chengxu/android-sdk/platform-tools:/Users/zhangyunfei/chengxu/android-sdk/tools:/Users/zhangyunfei/chengxu/android-sdk/tools/bin:/Users/zhangyunfei/chengxu/android-ndk:/Users/zhangyunfei/chengxu/sonar-scanner-3.0.3.778-macosx/bin:/Users/zhangyunfei/chengxu/infer-osx-v0.15.0/bin:/Users/zhangyunfei/.rvm/bin
+[INFO] SHELL=/bin/bash
+[INFO] PWD=/Users/zhangyunfei/git/demo/infer
+[INFO] Running with:
+
+------------------------------------------------------------
+Gradle 4.10.1
+------------------------------------------------------------
+
+Build time:   2018-09-12 11:33:27 UTC
+Revision:     76c9179ea9bddc32810f9125ad97c3315c544919
+
+Kotlin DSL:   1.0-rc-6
+Kotlin:       1.2.61
+Groovy:       2.4.15
+Ant:          Apache Ant(TM) version 1.9.11 compiled on March 23 2018
+JVM:          1.8.0_202 (Oracle Corporation 25.202-b08)
+OS:           Mac OS X 10.14 x86_64
+
+
+[INFO] Capture phase was successful
