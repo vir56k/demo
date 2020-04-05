@@ -1,5 +1,5 @@
 {
-  "description": "This is a test consignment",
+  "description": "测试托运物：consignment",
   "weight": 550,
   "containers": [
     {
