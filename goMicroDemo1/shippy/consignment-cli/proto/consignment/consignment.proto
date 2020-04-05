@@ -1,0 +1,44 @@
+// shipper/consignment-service/proto/consignment/consignment.proto
+
+syntax = "proto3";
+package go.micro.srv.consignment;
+
+// 货轮微服务
+service ShippingService {
+    // 托运一批货物
+    rpc CreateConsignment (Consignment) returns (Response) {
+    }
+     // 查看托运货物的信息
+    rpc GetConsignments (GetRequest) returns (Response) {
+    }
+}
+
+// 货轮承运的一批货物
+message Consignment {
+    string id = 1;                      // 货物编号
+    string description = 2;             // 货物描述
+    int32 weight = 3;                   // 货物重量
+    repeated Container containers = 4;  // 这批货有哪些集装箱
+    string vessel_id = 5;               // 承运的货轮
+}
+
+// 单个集装箱
+message Container {
+    string id = 1;          // 集装箱编号
+    string customer_id = 2; // 集装箱所属客户的编号
+    string origin = 3;      // 出发地
+    string user_id = 4;     // 集装箱所属用户的编号
+}
+
+// 托运结果
+message Response {
+    bool created = 1;            // 托运成功
+    Consignment consignment = 2;// 新托运的货物
+    repeated Consignment consignments = 3;  // 目前所有托运的货物
+
+}
+
+// 查看货物信息的请求
+// 客户端想要从服务端请求数据，必须有请求格式，哪怕为空
+message GetRequest {
+}
