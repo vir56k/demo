@@ -265,6 +265,13 @@ google.golang.org/grpc/serviceconfig
 google.golang.org/grpc/stats
 google.golang.org/grpc/status
 google.golang.org/grpc/tap
+# gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
+## explicit
+gopkg.in/mgo.v2
+gopkg.in/mgo.v2/bson
+gopkg.in/mgo.v2/internal/json
+gopkg.in/mgo.v2/internal/sasl
+gopkg.in/mgo.v2/internal/scram
 # honnef.co/go/tools v0.0.1-2019.2.3
 honnef.co/go/tools/arg
 honnef.co/go/tools/cmd/staticcheck
