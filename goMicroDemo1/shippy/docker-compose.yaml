@@ -29,3 +29,8 @@ services:
     image: mongo
     ports:
       - 27017:27017
+
+  database:
+    image: postgres
+    ports:
+      - 5432:5432
