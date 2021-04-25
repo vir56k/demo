@@ -1,0 +1,66 @@
+<html>
+<head>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      let $output, video;
+      let scale = 1;// 控制 图片的缩放比率
+
+      var initialize = function() {
+        $output = $("#output");
+        video = $("#video").get(0);
+        $("#capture").click(captureImage);
+      };
+
+      var captureImage = function(){
+        console.log("video.videoWidth=%s, video.videoHeight=%s",video.videoWidth,video.videoHeight)
+
+        var canvas = document.createElement("canvas");
+        canvas.width = video.videoWidth * scale;
+        canvas.height = video.videoHeight * scale;
+        canvas.getContext('2d')
+           .drawImage(video, 0, 0, canvas.width, canvas.height);
+        var img = document.createElement("img");
+        //console.log(canvas.toDataURL());
+        //方法返回一个包含图片展示的 data URI 。默认为 PNG 格式。图片的分辨率为96dpi
+        img.src = canvas.toDataURL();
+        $output.prepend(img);
+
+        //下面是保存到 本地的方法
+        //var link = document.getElementById('link');
+        //link.setAttribute('download', 'img_.png');
+        //link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+        //link.click();
+
+        //下面是 上传的方法
+        //删除字符串前的提示信息 "data:image/png;base64,"
+        var data = canvas.toDataURL();
+        var img_base64 = data.substring(22);
+        $.ajax({type:"POST", url: "/uploadfile", data: { data: img_base64, name: 'file' }, success:
+             function (){
+               $output.prepend("upload done!");
+             }
+         });
+      };
+
+      initialize();
+
+    });
+  </script>
+</head>
+
+<body>
+    <video id="video" controls autoplay>
+      <source src="http://localhost:8080/img/hmbb.mp4"/>
+       您的浏览器不支持 video 标签。
+    </video>
+    <p/>
+    <button id="capture">Capture</button>
+    <div id="output"></div
+    <!-- 故意不显示这个按钮 -->
+    <a id="link" style="display:none">保存图片</a>
+</body>
+
+</html>
