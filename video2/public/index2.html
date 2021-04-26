@@ -1,0 +1,164 @@
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"> </script>
+
+  <script type="text/javascript">
+    let _mediaRecorder;
+    let isRecording = '' ; //防止两次上传
+    let _mediaStream;
+    let _chunks;
+
+    $(document).ready(function(){
+      initialize();
+
+      $("#startBtn").click(function(){
+        console.log("# 点击 startBtn");
+        _chunks = [];
+        _mediaRecorder.start();  //  开始录像
+      });
+
+      $("#stopBtn").click(function(){
+        console.log("# 点击 stopBtn");
+        _mediaRecorder.stop(); //停止录像
+      });
+
+      $("#resetBtn").click(function(){
+        console.log("# 点击 resetBtn");
+        //重置
+        if(isRecording !== ""){
+          isRecording = "";
+          _mediaRecorder.start();}
+      });
+
+      $("#openBtn").click(function(){
+        initialize();
+      });
+
+      $("#closeBtn").click(function(){
+          closeMediaStream();
+      });
+    }); // end $(document).ready
+
+    // 初始化摄像头设备
+    var initialize = function() {
+      //  判断浏览器, 获得用户设备的兼容方法
+      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+      var constraints = { audio: true, video: { width: 1280, height: 720 } };
+
+      //调用摄像头
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then(function(mediaStream) {
+            _mediaStream = mediaStream;
+            console.log("# 初始化 摄像头");
+            // 成功后获取视频流：mediaStream
+            var video = document.querySelector('video');
+            //  赋值 video 并开始播放
+            video.srcObject = mediaStream;
+            video.onloadedmetadata = function(e) {
+              video.play();
+            };
+            // 初始化录制器
+            initMediaRecorder(mediaStream);
+        });
+
+    };// end initialize
+
+    // 初始化录制器
+    var initMediaRecorder = function(mediaStream){
+      console.log("# 初始化 mediaRecorder");
+      _chunks = [];
+      // 视频格式
+      let VIDEO_FORMAT = 'video/webm';
+      if(!MediaRecorder.isTypeSupported(VIDEO_FORMAT)){
+            alert(format)
+            alert("当前浏览器不支持该编码类型");
+            return;
+      }
+      // 初始化 录像 mediaRecorder
+      _mediaRecorder = new MediaStreamRecorder(mediaStream);
+      _mediaRecorder.mimeType = VIDEO_FORMAT;
+      //  当停止录像以后的回调函数
+      _mediaRecorder.ondataavailable = function (data) {
+          console.log("# 产生录制数据...");
+          console.log(data);
+          console.log("# ondataavailable, size = " + parseInt(data.size/1024) + "KB");
+          _chunks.push(data);
+      };
+      _mediaRecorder.onstop = function(e) {
+          console.log("# 录制终止 ...");
+          const fullBlob = new Blob(_chunks);
+          const blobURL = window.URL.createObjectURL(fullBlob);
+          console.log("blob is ?, size="+parseInt(fullBlob.size/1024)+"KB. "); console.log(fullBlob);
+          console.log("blobURL =" + blobURL);
+          //saveFile(blobURL);
+          uploadFile(fullBlob);
+        }
+    }// end initMediaRecorder
+
+    // 关闭流
+    var closeMediaStream = function(){
+      if(!_mediaStream) return;
+      console.log("# 关闭数据流");
+      _mediaStream.getTracks().forEach(function (track) {
+        track.stop();
+      });
+      _mediaStream = undefined;
+      _mediaRecorder = undefined;
+    }
+
+    // 保存文件（产生下载的效果)
+    let saveFile = function(blob){
+      const link = document.createElement('a');
+      link.style.display = 'none';
+      link.href = blob;
+      link.download = 'media_.mp4';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+
+    let uploadFile = function(blob){
+      var file = new File([blob], "media_.mp4");
+      var formData = new FormData();
+      formData.append('file', file);
+      console.log(formData);
+      console.log("# 准备上传, fileName="+file.name +", size="+ parseInt(file.size/1024)+" KB");
+      let $output = $("#output");
+      $.ajax({
+          type:"POST",
+          url: "/uploadvideo",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success:function (){
+             $output.prepend("上传视频成功!");
+           },
+          error : function() {
+            $output.prepend("上传视频失败!");
+          }
+       });
+    }
+
+  </script>
+</head>
+
+<body>
+    <video id="video"  width="640" height="480"  controls autoplay>
+       您的浏览器不支持 video 标签。
+    </video>
+    <p/>
+    <input type="button" name="" value="打开摄像头" id="openBtn">
+    <input type="button" name="" value="关闭摄像头" id="closeBtn">
+    <p/>
+    <input type="button" name="" value="开始录像" id="startBtn">
+    <input type="button" name="" value="停止录像" id="stopBtn">
+    <input type="button" name="" value="重置" id="resetBtn">
+    <p/>
+    <div id="output"></div>
+
+</body>
+
+</html>
