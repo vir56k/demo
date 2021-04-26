@@ -1,0 +1,189 @@
+<html>
+<head>
+  <title></title>
+
+  <!--
+效果：
+1.通过 video 播放视频，不过video设置为不可见。
+2.将 video里的视频帧展示在 canvas 上。
+3.录制 canvas 上的绘制的内容 并生成 字节blob 包。
+4. 上传 字节数据包到 后端
+ -->
+  <meta charset="utf-8">
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"> </script>
+
+  <script type="text/javascript">
+    let _mediaRecorder;
+    let _mediaStream;
+    let _chunks;
+    let _theVideo;
+    let _theCanvas;
+    let _ctx;
+    let _playID;// 动画ID，需要中的时候要用
+
+    $(document).ready(function(){
+      init();
+
+      $("#openBtn").click(function(){
+        console.log("# 点击 openBtn");
+        _chunks = [];
+        _theVideo.play()
+        _playID = playCanvas(_theVideo, _ctx);
+
+        setRecorder();
+      });
+
+      $("#closeBtn").click(function(){
+        console.log("# 点击 closeBtn");
+        _chunks = [];
+        _theVideo.pause();
+        if(_mediaRecorder)
+          _mediaRecorder.stop();
+        stopCanval();
+      });
+
+      $("#startBtn").click(function(){
+        console.log("# 点击 startBtn");
+        _mediaRecorder.start(); //录像
+      });
+
+      $("#stopBtn").click(function(){
+        console.log("# 点击 stopBtn");
+        _mediaRecorder.stop(); //停止录像
+      });
+
+    }); // end $(document).ready
+
+    // 一些初始化操作
+    var init = function() {
+      _theVideo = $("#theVideo").get(0);
+      _theCanvas = $("#theCanvas").get(0);
+      console.log(_theCanvas);
+      const ctx = _theCanvas.getContext('2d');
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, _theCanvas.width, _theCanvas.height);
+      _ctx = ctx;
+
+    };// end init
+
+    // 通过类似定时器的方式，将 视频流的内容 逐帧写入到 canvas
+    function playCanvas(srcvideo, ctx) {
+      //console.log("# playCanvas... ");
+      ctx.drawImage(srcvideo, 0, 0, 640, 360)
+      _playID = requestAnimationFrame(() => {
+        //console.log("# ctx.drawImage... id="+_playID);
+        playCanvas(srcvideo, ctx)
+      })
+    }
+
+    function stopCanval(){
+      console.log("# stopCanval... id="+_playID);
+      cancelAnimationFrame(_playID);
+    }
+
+    // 初始化录制器
+    var setRecorder = function(mediaStream){
+      console.log("# 初始化 mediaRecorder");
+      _chunks = [];
+      // 视频格式
+      let VIDEO_FORMAT = 'video/webm';
+      if(!MediaRecorder.isTypeSupported(VIDEO_FORMAT)){
+            alert(format)
+            alert("当前浏览器不支持该编码类型");
+            return;
+      }
+      // 初始化 录像 mediaRecorder
+      _mediaStream= _theCanvas.captureStream(60); // 60 FPS recording
+      console.log(_mediaStream);
+      _mediaRecorder = new MediaStreamRecorder(_mediaStream);
+      _mediaRecorder.mimeType = VIDEO_FORMAT;
+      _mediaRecorder.ondataavailable = function (data) {
+          console.log("# 产生录制数据...");
+          console.log(data);
+          console.log("# ondataavailable, size = " + parseInt(data.size/1024) + "KB");
+          _chunks.push(data);
+      };
+      _mediaRecorder.onstop = function(e) {
+          console.log("# 录制终止 ...");
+          const fullBlob = new Blob(_chunks);
+          const blobURL = window.URL.createObjectURL(fullBlob);
+          console.log("blob is ?, size="+parseInt(fullBlob.size/1024)+"KB. "); console.log(fullBlob);
+          console.log("blobURL =" + blobURL);
+
+          uploadFile(fullBlob);
+        }
+    }// end initMediaRecorder
+
+    function unsetRecorder(){
+        if(!_mediaRecorder) return;
+        _mediaRecorder.stop();
+        closeMediaStream();
+
+        // 关闭流
+        var closeMediaStream = function(){
+          if(!_mediaStream) return;
+          console.log("# 关闭数据流");
+          _mediaStream.getTracks().forEach(function (track) {
+            track.stop();
+          });
+          _mediaStream = undefined;
+          _mediaRecorder = undefined;
+        }
+    }
+
+    let uploadFile = function(blob){
+      var file = new File([blob], "media_.mp4");
+      var formData = new FormData();
+      formData.append('file', file);
+      console.log(formData);
+      console.log("# 准备上传, fileName="+file.name +", size="+ parseInt(file.size/1024)+" KB");
+      let $output = $("#output");
+      $.ajax({
+          type:"POST",
+          url: "/uploadvideo",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success:function (){
+             $output.prepend("上传视频成功!");
+           },
+          error : function() {
+            $output.prepend("上传视频失败!");
+          }
+       });
+    }
+
+
+    // 保存文件（产生下载的效果)
+    let saveFile = function(blob){
+      const link = document.createElement('a');
+      link.style.display = 'none';
+      link.href = blob;
+      link.download = 'media_.mp4';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+
+  </script>
+</head>
+
+<body>
+    <div style="text-align: center;margin-top:10px;">
+      <canvas id="theCanvas" height=360 width=640 style="width:640px;margin:auto;"></canvas>
+      <video src="hmbb.mp4" id="theVideo" autoplay=true style="display:none;"></video>
+    </div>
+    <p/>
+    <input type="button" name="" value="开始播放" id="openBtn">
+    <input type="button" name="" value="停止播放" id="closeBtn">
+    <p/>
+    <p/>
+    <input type="button" name="" value="开始录像" id="startBtn">
+    <input type="button" name="" value="停止录像" id="stopBtn">
+    <p/>
+    <div id="output"></div>
+
+</body>
+
+</html>
