@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <meta charset="UTF-8"/>
+
+    <style>
+      body {
+        background: black;
+        color:#CCCCCC;
+      }
+      #c2 {
+        background-image: url(foo.png);
+        background-repeat: no-repeat;
+      }
+      div {
+        float: left;
+        border :1px solid #444444;
+        padding:10px;
+        margin: 10px;
+        background:#3B3B3B;
+      }
+      b {
+        width: 180px;
+        display: inline-block;;
+      }
+
+      input[type=range] {
+          width: 20vw;
+      }
+    </style>
+<script type='text/javascript' src='colorconverter.min.js'></script>
+<script type="text/javascript">
+    var processor ={};
+    processor.hue = 0;
+    processor.saturation = 0;
+    processor.lightness = 0;
+    processor.contrast = 0;
+
+    // function test(){
+    //   let from = [1,100,200];
+    //   console.log(from);
+    //   let hsl = colorconv.RGB2HSL(from)
+    //   // let lt = lightValue/255*100;
+    //   // hsl[2] = hsl[2] + lt > 100 ? 100 : hsl[2] + lt;
+    //   console.log(hsl);
+    //   hsl[2] = hsl[2]+50;
+    //   console.log(hsl);
+    //   let newColor = colorconv.HSL2RGB(hsl);
+    //   console.log(newColor);
+    //
+    //   this.c1 = document.getElementById('c1');
+    //   this.c2 = document.getElementById('c2');
+    //   c1.style.background='rgba('+from[0]+','+from[1]+','+from[2]+','+255+')';
+    //   c2.style.background='rgba('+newColor[0]+','+newColor[1]+','+newColor[2]+','+255+')';
+    // }
+
+    $(document).ready(function(){
+      processor.doLoad();
+      postMsg("ready");
+    });
+
+
+    processor.doLoad = function() {
+      this.video = document.getElementById('video');
+      this.c1 = document.getElementById('c1');
+      this.ctx1 = this.c1.getContext('2d');
+      this.c2 = document.getElementById('c2');
+      this.ctx2 = this.c2.getContext('2d');
+      let self = this;
+      this.video.addEventListener('play', function() {
+          console.log("# on play");
+          self.width = self.video.videoWidth / 2;
+          self.height = self.video.videoHeight / 2;
+          self.timerCallback();
+        }, false);
+    };
+
+    processor.timerCallback = function timerCallback() {
+        //console.log("# on timerCallback");
+        if (this.video.paused || this.video.ended) {
+          return;
+        }
+        // 执行 帧运算
+        this.computeFrame();
+        let self = this;
+        setTimeout(function() {
+            self.timerCallback();
+        }, 0);
+    }
+
+    //  帧运算 的逻辑
+    processor.computeFrame = function computeFrame() {
+        // 在第一个 canvas 中绘制原图
+        this.ctx1.drawImage(this.video, 0, 0, this.width, this.height);
+        // 获得 第一个 canvas 中 的帧，做转换
+        let frame = this.ctx1.getImageData(0, 0, this.width, this.height);
+        let dataArray = frame.data;
+        let pixCount = dataArray.length / 4;
+        const {hue,saturation,lightness,contrast} = processor;
+        for (let i = 0; i < pixCount; i++) {
+            let pixOffset = i * 4;
+            change_per_pix({hue, saturation, lightness, contrast},dataArray,pixOffset)
+        }
+        if(contrast && parseFloat(contrast) !=0){
+          let avg = getGrayAverage(dataArray);
+          makeContrast(dataArray, avg, contrast*255);
+        }
+        // 在第二个 canvas 中绘制
+        this.ctx2.putImageData(frame, 0, 0);
+        return;
+    }
+
+
+    // 对每个像素点 调节 数值
+    function change_per_pix(param, dataArray, offset){
+          // 从 rgb 转成成 hls
+          let r = dataArray[offset];
+          let g = dataArray[offset + 1];
+          let b = dataArray[offset + 2];
+          let from = [r,g,b];
+          let hsl = colorconv.RGB2HSL(from)
+
+          //处理 色度
+          if(param.hue && param.hue != 0){
+            // delta 的区间 [-360,360]
+            const delta = parseInt(param.hue*360);
+            let hue = hsl[0] + delta;
+            if(hue < 0) hue = 0;
+            if(hue > 360) hue = 360;
+            let str = "param.hue=" + param.hue +", hsl[0] = "+hsl[0] + ", delta="+delta+", hue="+hue;
+            //postMsg(str);
+            hsl[0] = hue;
+          }
+          // 处理 饱和度
+          if(param.saturation && param.saturation != 0){
+            // delta 的区间 [-100,100]
+            const delta = parseInt(param.saturation * 100);
+            let saturation = hsl[1] + delta;
+            if(saturation < 0) saturation = 0;
+            if(saturation > 100) hue = saturation;
+            let str = "param.saturation=" + param.saturation +", hsl[1] = "+hsl[1] + ", delta="+delta+", saturation="+saturation;
+            hsl[1] = saturation;
+          }
+          // 处理 亮度
+          if(param.lightness  && param.lightness != 0){
+            // delta 的区间 [-100,100]
+            const delta = parseInt(param.lightness * 100);
+            let lightness = hsl[2] + delta;
+            if(lightness < 0) lightness = 0;
+            if(lightness > 100) hue = lightness;
+            let str = "param.lightness=" + param.lightness +", hsl[2] = "+hsl[2] + ", delta="+delta+", lightness="+lightness;
+            hsl[2] = lightness;
+          }
+
+          // 从 hls 转回去 rgb
+          let newColor = colorconv.HSL2RGB(hsl);
+          dataArray[offset] =     newColor[0];
+          dataArray[offset + 1] = newColor[1];
+          dataArray[offset + 2] = newColor[2];
+    }
+
+    function makeContrast(dataArray, average, contrast){
+      postMsg("# GrayAverage=" + average +", contrast="+contrast);
+        let pixCount = dataArray.length / 4;
+        for (let i = 0; i < pixCount; i++) {
+           const pixOffset = i * 4;
+           let r = dataArray[pixOffset];
+           let g = dataArray[pixOffset+1];
+           let b = dataArray[pixOffset+2];
+           let newR = r+(r-average) * contrast/255
+           let newG = g+(g-average) * contrast/255
+           let newB = b+(b-average) * contrast/255
+           if(newR<0) newR =0; if(newR>255) newR = 255;
+           if(newG<0) newG =0; if(newG>255) newG = 255;
+           if(newB<0) newB =0; if(newB>255) newR = 255;
+           dataArray[pixOffset] = newR;
+           dataArray[pixOffset+1] = newG;
+           dataArray[pixOffset+2] = newB;
+        }
+    }
+
+    // 计算某个 帧的 灰度平均值
+    function getGrayAverage(imagePixArray){
+      var average = function(dataArray){
+          let pixCount = dataArray.length / 4;
+          let sum = 0;
+          for (let i = 0; i < pixCount; i++) {
+             const pixOffset = i * 4;
+             let r = dataArray[pixOffset];
+             let g = dataArray[pixOffset+1];
+             let b = dataArray[pixOffset+2];
+             sum = sum + parseInt(0.299 * r + 0.587 * b + 0.114 * g);
+          }
+          let aver = sum / dataArray.length;
+          return aver;
+      }// end inner function
+      return average(imagePixArray);
+   }// end
+
+    function showHueVal(value){
+      processor.hue = parseFloat(value);
+      console.log("# 用户改变了 色度=" + processor.hue);
+    }
+
+    function showSatVal(value){
+      console.log("# 用户改变了 饱和度="+value);
+      processor.saturation = parseFloat(value);
+    }
+
+    function showLightVal(value){
+      console.log("# 用户改变了 亮度="+value);
+      processor.lightness = parseFloat(value);
+    }
+
+    function showContrastVal(value){
+      console.log("# 用户改变了 对比度="+value);
+      processor.contrast = parseFloat(value);
+    }
+
+    function postMsg(msg){
+      $("#output").html("<b>"+msg+"</b>");
+    }
+</script>
+
+  </head>
+
+  <body>
+    <div>
+      <video id="video" src="video.ogm" controls="true"/>
+    </div>
+    <div>
+      <p>原图</p>
+      <canvas id="c1" width="160" height="96"/>
+    </div>
+    <div>
+      <p>处理后</p>
+      <canvas id="c2" width="160" height="96"/>
+    </div>
+
+    <div>
+      <!--
+      设置范围:
+       色度： 		0 ~ 255
+       饱和度： 	0 ~ 127
+       亮度： 		0 ~ 255
+       对比度：	0 ~ 127
+      为了方便计算 delta，这里用百分比
+     -->
+      <p>
+        <b>Hue（色度）： </b>
+        <input type="range" min="-1" max="1" value="0" step="0.01" onchange="showHueVal(this.value)"/>
+      </p>
+      <p>
+        <b>Saturation（饱和度）：</b>
+        <input type="range" min="-1" max="1" value="0" step="0.01" onchange="showSatVal(this.value)"/>
+      </p>
+      <p>
+        <b>Lightness（亮度）： </b>
+        <input type="range" min="-1" max="1" value="0" step="0.01" onchange="showLightVal(this.value)"/>
+      </p>
+      <p>
+        <b>对比度： </b>
+        <input type="range" min="-1" max="1" value="0" step="0.01" onchange="showContrastVal(this.value)"/>
+      </p>
+    </div>
+    <div id="output"></div>
+  </body>
+</html>
