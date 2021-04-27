@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<!--
+1、video 的视频流播放，并通过canas捕获内容展示
+2、在canvas 中对像素操作，将黄色 块改为透明。
+  -->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <meta charset="UTF-8"/>
+
+    <style>
+      body {
+        background: black;
+        color:#CCCCCC;
+      }
+      #c2 {
+        background-image: url(foo.png);
+        background-repeat: no-repeat;
+      }
+      div {
+        float: left;
+        border :1px solid #444444;
+        padding:10px;
+        margin: 10px;
+        background:#3B3B3B;
+      }
+    </style>
+
+<script type="text/javascript">
+    var processor ={};
+    processor.lightValue = -1;
+
+    $(document).ready(function(){
+      processor.doLoad();
+
+    });
+
+
+    processor.doLoad = function() {
+      this.video = document.getElementById('video');
+      this.c1 = document.getElementById('c1');
+      this.ctx1 = this.c1.getContext('2d');
+      this.c2 = document.getElementById('c2');
+      this.ctx2 = this.c2.getContext('2d');
+      let self = this;
+      this.video.addEventListener('play', function() {
+          console.log("# on play");
+          self.width = self.video.videoWidth / 2;
+          self.height = self.video.videoHeight / 2;
+          self.timerCallback();
+        }, false);
+    };
+
+    processor.timerCallback = function timerCallback() {
+        //console.log("# on timerCallback");
+        if (this.video.paused || this.video.ended) {
+          return;
+        }
+        // 执行 帧运算
+        this.computeFrame();
+        let self = this;
+        setTimeout(function() {
+            self.timerCallback();
+        }, 0);
+    }
+
+    processor.computeFrame = function computeFrame() {
+        this.ctx1.drawImage(this.video, 0, 0, this.width, this.height);
+        let frame = this.ctx1.getImageData(0, 0, this.width, this.height);
+        let l = frame.data.length / 4;
+
+        for (let i = 0; i < l; i++) {
+          let r = frame.data[i * 4 + 0];
+          let g = frame.data[i * 4 + 1];
+          let b = frame.data[i * 4 + 2];
+          if (g > 100 && r > 100 && b < 43)
+            frame.data[i * 4 + 3] = 0;
+        }
+        this.ctx2.putImageData(frame, 0, 0);
+        return;
+      }
+
+</script>
+
+  </head>
+
+  <body>
+    <div>
+      <video id="video" src="video.ogm" controls="true"/>
+    </div>
+    <div>
+      <p>原图</p>
+      <canvas id="c1" width="160" height="96"/>
+    </div>
+    <div>
+      <p>处理后</p>
+      <canvas id="c2" width="160" height="96"/>
+    </div>
+
+  </body>
+</html>

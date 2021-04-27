@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <meta charset="UTF-8"/>
+
+    <style>
+      body {
+        background: black;
+        color:#CCCCCC;
+      }
+      #c2 {
+        background-image: url(foo.png);
+        background-repeat: no-repeat;
+      }
+      div {
+        float: left;
+        border :1px solid #444444;
+        padding:10px;
+        margin: 10px;
+        background:#3B3B3B;
+      }
+    </style>
+
+<script type="text/javascript">
+    var processor ={};
+    processor.lightValue = -1;
+
+    $(document).ready(function(){
+      processor.doLoad();
+
+    });
+
+
+    processor.doLoad = function() {
+      this.video = document.getElementById('video');
+      this.c1 = document.getElementById('c1');
+      this.ctx1 = this.c1.getContext('2d');
+      this.c2 = document.getElementById('c2');
+      this.ctx2 = this.c2.getContext('2d');
+      let self = this;
+      this.video.addEventListener('play', function() {
+          console.log("# on play");
+          self.width = self.video.videoWidth / 2;
+          self.height = self.video.videoHeight / 2;
+          self.timerCallback();
+        }, false);
+    };
+
+    processor.timerCallback = function timerCallback() {
+        //console.log("# on timerCallback");
+        if (this.video.paused || this.video.ended) {
+          return;
+        }
+        // 执行 帧运算
+        this.computeFrame();
+        let self = this;
+        setTimeout(function() {
+            self.timerCallback();
+        }, 0);
+    }
+
+    //  帧运算 的逻辑
+    processor.computeFrame = function computeFrame() {
+        // 在第一个 canvas 中绘制原图
+        this.ctx1.drawImage(this.video, 0, 0, this.width, this.height);
+        // 获得 第一个 canvas 中 的帧，做转换
+        let frame = this.ctx1.getImageData(0, 0, this.width, this.height);
+        let dataArray = frame.data;
+        let pixCount = dataArray.length / 4;
+        for (let i = 0; i < pixCount; i++) {
+            let pixOffset = i * 4;
+            const light = processor.lightValue;
+            changeLight_per_pix(light,dataArray,pixOffset)
+        }
+        // 在第二个 canvas 中绘制
+        this.ctx2.putImageData(frame, 0, 0);
+        return;
+    }
+
+    // 调节亮度
+    // 参数：lightValue 是 0~255 之间的数值
+    // dataArray 是图片的像素集合
+    // offset 是 像素的偏移量
+    function changeLight_per_pix(lightValue, dataArray, offset){
+          if(lightValue <0 || lightValue >255) return;
+          dataArray[offset] =     dataArray[offset] + lightValue > 255 ? 255 : dataArray[offset] + lightValue;
+          dataArray[offset + 1] = dataArray[offset + 1] + lightValue > 255 ? 255 : dataArray[offset + 1] + lightValue;
+          dataArray[offset + 2] = dataArray[offset + 2] + lightValue > 255 ? 255 : dataArray[offset + 2] + lightValue;
+    }
+
+    // 调节亮度
+    // dataArray 是图片的像素集合
+    // offset 是 像素的偏移量
+    function bgTransparent_per_pix(dataArray, offset){
+        let r = dataArray[offset * 4 + 0];
+        let g = dataArray[offset * 4 + 1];
+        let b = dataArray[offset * 4 + 2];
+        if (g > 100 && r > 100 && b < 43)
+            dataArray[offset * 4 + 3] = 0;
+    }
+
+    function showLightVal(value){
+        console.log("# 用户改变了 亮度="+value);
+        processor.lightValue = parseInt(value);
+    }
+</script>
+
+  </head>
+
+  <body>
+    <div>
+      <video id="video" src="video.ogm" controls="true"/>
+    </div>
+    <div>
+      <p>原图</p>
+      <canvas id="c1" width="160" height="96"/>
+    </div>
+    <div>
+      <p>处理后</p>
+      <canvas id="c2" width="160" height="96"/>
+    </div>
+
+    <div>
+      <p>亮度： <input type="range" min="-1" max="255" value="0" step="1" onchange="showLightVal(this.value)" style=""/></p>
+    </div>
+  </body>
+</html>
