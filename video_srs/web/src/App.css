@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+video::-webkit-media-controls-panel {
+    display: flex !important;
+    opacity: 1 !important;
+}
+
+.reflv-wrap {
+    width: 500px;
+    margin: 10px 0;
+}
