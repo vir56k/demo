@@ -1,13 +1,21 @@
 import React, { PureComponent } from 'react';
 import Reflv from '@/Reflv/index';
 
-import demo from './movie.flv';
-
 export class MyDemo extends PureComponent {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+        "Video_URL": 'http://localhost:8080/live/livestream.flv'
+      }
+  }
+
+  componentDidMount() {
+  }
 
   render() {
     return (
-      <Reflv url={demo} type="flv"/>
+      <Reflv url={this.state.Video_URL} type="flv"/>
     )
   }
 }
