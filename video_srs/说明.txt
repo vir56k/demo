@@ -1,0 +1,10 @@
+
+
+# api 文件夹
+api 文件夹 是 从 SRS 源代码中复制出来的 api-server，由于不方便执行。于是自己补充了 Dockerfile，打成镜像再运行
+
+使用：
+  1、打成镜像
+      docker build -t api .
+  2、启动
+      docker run --rm -p 8085:8085 --name=api api
