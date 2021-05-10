@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+
+# Use "*" to expose all endpoints, or a comma-separated list to expose selected ones
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
