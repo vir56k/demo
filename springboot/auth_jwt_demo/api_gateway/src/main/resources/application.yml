@@ -1,0 +1,60 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      default-filters:
+        - AuthorizationFilter
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      globalcors:
+        corsConfigurations:
+          '[/auth/**]':
+            allowedOrigins: '*'
+            allowedHeaders:
+              - x-auth-token
+              - x-request-id
+              - Content-Type
+              - x-requested-with
+              - x-request-id
+            allowedMethods:
+              - GET
+              - POST
+              - OPTIONS
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+        - id: hello-service-1
+          uri: lb://hello-service
+          predicates:
+            - Path=/hello/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    prefer-ip-address: true
+
+# 配置Gateway日志等级，输出转发细节信息
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+
+ignore:
+  authorization:
+    urlList:
+      - /auth/login
+      - /auth/logout
